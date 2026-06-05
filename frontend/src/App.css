@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Purple/White Background Grid */
+.grid-bg {
+  background-color: #faf9ff;
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center;
+}
+
+/* SaaS Card styling */
+.saas-card {
+  background: #ffffff;
+  border: 1px solid #f0ecfc;
+  box-shadow: 0 4px 20px -2px rgba(124, 58, 237, 0.05), 0 2px 8px -1px rgba(124, 58, 237, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.saas-card-hover:hover {
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.12), 0 4px 12px -2px rgba(124, 58, 237, 0.04);
+  transform: translateY(-2px);
+}
+
+.saas-input {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease-in-out;
+}
+
+.saas-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+  outline: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Code Syntax Styling (remains dark for high contrast) */
+pre code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+/* Glowing text elements */
+.glow-text-purple {
+  text-shadow: 0 0 12px rgba(124, 58, 237, 0.3);
+}
+
+/* Animated compiler progress indicator line */
+@keyframes loading-progress {
+  0% { left: -30%; width: 30%; }
+  50% { left: 30%; width: 40%; }
+  100% { left: 100%; width: 30%; }
+}
+
+.animate-progress-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-progress-beam::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #a78bfa, #7c3aed, transparent);
+  animation: loading-progress 1.8s infinite linear;
+}
+
